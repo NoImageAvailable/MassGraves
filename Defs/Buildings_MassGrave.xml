@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Buildings>
+<Defs>
   
   <ThingDef Name="BuildingBase" Abstract="True">
     <category>Building</category>
@@ -28,7 +28,7 @@
     <building>
       <ai_chillDestination>false</ai_chillDestination>
       <isInert>true</isInert>
-      <preventDeterioration>true</preventDeterioration>
+      <preventDeteriorationInside>true</preventDeteriorationInside>
       <fixedStorageSettings>
         <filter>
           <categories>
@@ -94,4 +94,4 @@
     <designationCategory>Misc</designationCategory>
   </ThingDef>
   
-</Buildings>
+</Defs>
