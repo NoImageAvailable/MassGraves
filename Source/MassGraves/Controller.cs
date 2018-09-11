@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using UnityEngine;
-using Harmony;
 
 namespace MassGraves
 {
@@ -17,7 +11,6 @@ namespace MassGraves
         public Controller(ModContentPack content) : base(content)
         {
             settings = GetSettings<Settings>();
-            HarmonyInstance.Create("MassGraves.Harmony").PatchAll(Assembly.GetExecutingAssembly());
         }
 
         public override string SettingsCategory()

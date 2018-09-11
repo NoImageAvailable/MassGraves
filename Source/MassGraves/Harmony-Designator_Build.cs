@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
-using UnityEngine;
 using Harmony;
+using System.Reflection;
 
 namespace MassGraves
 {
-    [HarmonyPatch(typeof(Designator_Build))]
-    [HarmonyPatch("Visible", PropertyMethod.Getter)]
+    [StaticConstructorOnStartup]
+    public static class HarmonyLoader {
+        static HarmonyLoader()
+        {
+            HarmonyInstance.Create("MassGraves.Harmony").PatchAll(Assembly.GetExecutingAssembly());
+        }
+    }
+
+    [HarmonyPatch(typeof(Designator_Build), "Visible", MethodType.Getter)]
     public static class Harmony_Designator_Build
     {
         public static bool Prefix(Designator_Build __instance, ref bool __result)
@@ -19,6 +22,20 @@ namespace MassGraves
                 || (__instance.PlacingDef == GraveDefOf.MassGraveAlt && !Controller.settings.UseAlt))
             {
                 __result = false;
+                return false;
+            }
+            return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(Building_Grave), "StorageTabVisible", MethodType.Getter)]
+    public static class Harmony_Storage_Tab_Visible {
+        public static bool Prefix(Building_Grave __instance, ref bool __result)
+        {
+            if (__instance is Building_MassGrave massGrave)
+            {
+                // This method is not virtual so we have to replace the root definition :(
+                __result = massGrave.StorageTabVisible;
                 return false;
             }
             return true;
