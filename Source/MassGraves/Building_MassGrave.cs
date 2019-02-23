@@ -14,6 +14,8 @@ namespace MassGraves
 
         private bool CanAcceptCorpses => CorpseCount < Controller.settings.CorpseCapacity;
 
+        private int remainingLifeTime = 1800000;
+
         public override bool Accepts(Thing thing)
         {
             return innerContainer.CanAcceptAnyOf(thing) && CanAcceptCorpses && GetStoreSettings().AllowedToAccept(thing);
@@ -33,13 +35,26 @@ namespace MassGraves
         public override IEnumerable<Gizmo> GetGizmos()
         {
             var gizmos = base.GetGizmos();
-            foreach(Gizmo giz in gizmos)
+            foreach (Gizmo giz in gizmos)
             {
-                if((giz as Command_Action)?.defaultLabel!= "CommandGraveAssignColonistLabel".Translate())
+                if ((giz as Command_Action)?.defaultLabel != "CommandGraveAssignColonistLabel".Translate())
                 {
                     yield return giz;
                 }
             }
+        }
+
+        public override void TickRare()
+        {
+            base.TickRare();
+            remainingLifeTime -= GenTicks.TickRareInterval;
+            if (remainingLifeTime <= 0) Destroy();
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref remainingLifeTime, "remainingLifeTime");
         }
     }
 }

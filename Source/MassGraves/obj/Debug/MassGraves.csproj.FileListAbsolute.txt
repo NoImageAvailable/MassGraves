@@ -2,3 +2,7 @@ D:\Games\RimWorld1722Win\Mods\MassGraves\Assemblies\MassGraves.dll
 D:\Games\RimWorld1722Win\Mods\MassGraves\Source\MassGraves\obj\Debug\MassGraves.csprojResolveAssemblyReference.cache
 D:\Games\RimWorld1722Win\Mods\MassGraves\Source\MassGraves\obj\Debug\MassGraves.csproj.CoreCompileInputs.cache
 D:\Games\RimWorld1722Win\Mods\MassGraves\Source\MassGraves\obj\Debug\MassGraves.dll
+D:\Games\RimWorld2150Win64\Mods\MassGraves\Assemblies\MassGraves.dll
+D:\Games\RimWorld2150Win64\Mods\MassGraves\Source\MassGraves\obj\Debug\MassGraves.csprojResolveAssemblyReference.cache
+D:\Games\RimWorld2150Win64\Mods\MassGraves\Source\MassGraves\obj\Debug\MassGraves.csproj.CoreCompileInputs.cache
+D:\Games\RimWorld2150Win64\Mods\MassGraves\Source\MassGraves\obj\Debug\MassGraves.dll
