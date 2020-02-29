@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>Mass Graves</name>
-	<author>NoImageAvailable</author>
+	<author>Arcjc007</author>
+	<packageId>Arcjc007.MassGraves</packageId>
 	<supportedVersions>
-		<li>1.0</li>
+		<li>1.1</li>
 	</supportedVersions>
 	<description>v0.18.1.1\n\nAdds mass graves to allow easier disposing of raider corpses.</description>
 </ModMetaData>
