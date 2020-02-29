@@ -5,12 +5,12 @@ using System.Text;
 using RimWorld;
 using Verse;
 using UnityEngine;
-using Harmony;
+using HarmonyLib;
 
 namespace MassGraves
 {
     [HarmonyPatch(typeof(Designator_Build))]
-    [HarmonyPatch("Visible", PropertyMethod.Getter)]
+    [HarmonyPatch("Visible", MethodType.Getter)]
     public static class Harmony_Designator_Build
     {
         public static bool Prefix(Designator_Build __instance, ref bool __result)

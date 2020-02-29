@@ -2,8 +2,9 @@
 <ModMetaData>
 	<name>Mass Graves</name>
 	<author>NoImageAvailable</author>
+	<packageId>NoImageAvailable.MassGraves</packageId>
 	<supportedVersions>
-		<li>1.0</li>
+		<li>1.1</li>
 	</supportedVersions>
-	<description>v0.18.1.1\n\nAdds mass graves to allow easier disposing of raider corpses.</description>
+	<description>v1.1.0.0\n\nAdds mass graves to allow easier disposing of raider corpses.</description>
 </ModMetaData>
